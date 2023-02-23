@@ -1,5 +1,5 @@
 # :dna: SRA Metadata Explorer
-The `SRA Metadata Explorer` application is written in Python 3.10.9. It uses the [`pysradb`](https://github.com/saketkc/pysradb) package, written by Saket Choudhary, to download metadata from the Sequence Read Archive ([SRA](https://www.ncbi.nlm.nih.gov/sra)), maintained by the National Center for Biotechnology Information (NCBI).
+The `SRA Metadata Explorer` application is written in Python (3.10.9). It uses the [`pysradb`](https://github.com/saketkc/pysradb) package, written by Saket Choudhary, to download metadata from the Sequence Read Archive ([SRA](https://www.ncbi.nlm.nih.gov/sra)), maintained by the National Center for Biotechnology Information (NCBI).
 
 The application accepts one of three search or load inputs,
 
