@@ -3,7 +3,7 @@ The `SRA Metadata Explorer` application is written in Python 3.10.9. It uses the
 
 The application accepts one of three search or load inputs,
 
-   1. A study, experiment or sample code, or codes. For multiple codes enter them seperated by a pipe symbol '|', e.g., SRP017942|SRP015946|SRP028720.  
+   1. A study, experiment or sample code, or codes. For multiple codes enter them separated by a pipe symbol '|', e.g., SRP017942|SRP015946|SRP028720.  
    2. A search text enclosed within parentheses, e.g., "ribosome profiling.  
    3. A CSV file name, or path. Currently, the file has to be on the same computer/server that the app is running on.  
 
@@ -11,7 +11,7 @@ The application accepts one of three search or load inputs,
 
 Once the metadata is retrieved, the filters in the side bar get updated based and the user can filter the data based on them. In addition, a table with statistics for each study, and interactive box plots (using the [`plotly_express`](https://plotly.com/python/plotly-express/) package) with the spots, bases, size and read lengths, grouped by the studies. The table and charts are initialized with up to the 5 first studies in the data.
 
-At times, the pysradb API times out and failes to retreive the requested metadata. If this is the case, try again later. In the mean time, you can use one of the CSV files `metadata[1/2].csv` to try out the app.
+At times, the pysradb API times out and fails to retrieve the requested metadata. If this is the case, try again later. In the mean time, you can use one of the CSV files `metadata[1/2].csv` to try out the app.
 
 ### Installation
 To install `streamlit` using pip:  
@@ -32,7 +32,7 @@ or alternatively,
 ### Running the App and Known Issues
 To run the app:  
 `streamer run SRAMetadataExplorer.py`  
-A local server will be started, and the app will  be launced in a new brwoser tab.
+A local server will be started, and the app will be launched in a new browser tab.
 
 If running `streamer run filename.py` gives a `ModuleNotFoundError: No module named 'streamlit.cli'`, go to anaconda3/envs/[env name]/bin/ and edit the `streamlit` file from,  
    `from streamlit.cli import main`  
