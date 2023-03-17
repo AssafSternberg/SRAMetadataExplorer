@@ -31,10 +31,10 @@ or alternatively,
 
 ### Running the App and Known Issues
 To run the app:  
-`streamer run SRAMetadataExplorer.py`  
+`streamlit run SRAMetadataExplorer.py`  
 A local server will be started, and the app will be launched in a new browser tab.
 
-If running `streamer run filename.py` gives a `ModuleNotFoundError: No module named 'streamlit.cli'`, go to anaconda3/envs/[env name]/bin/ and edit the `streamlit` file from,  
+If running `streamlit run filename.py` gives a `ModuleNotFoundError: No module named 'streamlit.cli'`, go to anaconda3/envs/[env name]/bin/ and edit the `streamlit` file from,  
    `from streamlit.cli import main`  
 to,  
    `from streamlit.web.cli import main`
