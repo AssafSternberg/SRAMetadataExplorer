@@ -36,8 +36,8 @@ tab1, tab2 = st.tabs([":bar_chart: Data", ":information_source: About"])
 loadSearch = tab1.text_input('''Enter study/experiment/sample/run accession 
                              codes, a text to  search for or a CSV file name 
                              to  load: ''', 
-                             placeholder=(''''SRP017942|SRP015946|SRP028720, 
-                                          "Sars-Cov-2" or filename.csv ''')) 
+                             placeholder=('SRP017942|SRP015946|SRP028720, ' + 
+                                          '"Sars-Cov-2" or filename.csv')) 
 tab1.markdown('''<p style=\"font-size:10px;\">*Codes can be SRP/ERP/GMP/DRP 
             SRS/ERS/DRS/GMS SRX/ERX/GMX/DRX or SRR/ERR/GMR/DRR. For multiple 
             codes, separate codes by '|' (pipe symbol). </br> 
