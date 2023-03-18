@@ -22,7 +22,7 @@ dfColumns = ['study_accession', 'study_title', 'experiment_accession',
            'instrument', 'total_spots', 'total_size', 'run_accession', 
            'run_total_bases', 'run_total_spots', 'read_length']
 statColumns = (['number_of_experiments', 'number_of_runs', 
-                'number_of_samples', 'organism, names',
+                'number_of_samples', 'organism_names',
                 'library_strategies', 'library_sources',
                 'instruments'])
 df_empty = pd.DataFrame(data = None, columns = dfColumns)
@@ -37,7 +37,7 @@ loadSearch = tab1.text_input('''Enter study/experiment/sample/run accession
                              codes, a text to  search for or a CSV file name 
                              to  load: ''', 
                              placeholder=('SRP017942|SRP015946|SRP028720, ' + 
-                                          '"Sars-Cov-2" or filename.csv')) 
+                                          '"SARS-CoV-2" or filename.csv')) 
 tab1.markdown('''<p style=\"font-size:10px;\">*Codes can be SRP/ERP/GMP/DRP 
             SRS/ERS/DRS/GMS SRX/ERX/GMX/DRX or SRR/ERR/GMR/DRR. For multiple 
             codes, separate codes by '|' (pipe symbol). </br> 
@@ -49,11 +49,12 @@ if loadSearch != '':
     db = SRAweb()
     if bool(re.fullmatch('".+"', loadSearch)):  # search text between parentheses
         df = db.search_sra(search_str = loadSearch)
-    elif bool(re.fullmatch("^\D\D\D\d+[|\D\D\D\d+|]*[\D\D\D\d+$]*", loadSearch)): # valid code or codes seperated by '|'
+    elif bool(re.fullmatch("^([S|E|D|G]R[P|S|X|R]\d+)(\|[S|E|D|G]R[P|S|X|R]\d+)*", loadSearch)): # valid code or codes seperated by '|'
         df = db.sra_metadata(loadSearch)
     elif bool(re.fullmatch('.+\.csv', loadSearch)):  # CSV file name  
         df = pd.read_csv(loadSearch)
     else:
+        tab1.error("You did not enter a valid input. Please try again.")
         tab1.markdown(''''<p style="color:Red; font-size:16px;">You did not 
                       enter a valid input. Please try again.</p>''', 
                       unsafe_allow_html = True)
