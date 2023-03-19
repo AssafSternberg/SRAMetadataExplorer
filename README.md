@@ -4,7 +4,7 @@ The `SRA Metadata Explorer` application is written in Python (3.10.9). It uses t
 The application accepts one of three search or load inputs,
 
    1. A study, experiment or sample code, or codes. For multiple codes enter them separated by a pipe symbol '|', e.g., SRP017942|SRP015946|SRP028720.  
-   2. A search text enclosed within parentheses, e.g., "ribosome profiling.  
+   2. A search text enclosed within quotation marks, e.g., "ribosome profiling".  
    3. A CSV file name, or path. Currently, the file has to be on the same computer/server that the app is running on.  
 
 **Notice:** text searches might take a long time to run.

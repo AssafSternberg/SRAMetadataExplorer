@@ -41,13 +41,13 @@ loadSearch = tab1.text_input('''Enter study/experiment/sample/run accession
 tab1.markdown('''<p style=\"font-size:10px;\">*Codes can be SRP/ERP/GMP/DRP 
             SRS/ERS/DRS/GMS SRX/ERX/GMX/DRX or SRR/ERR/GMR/DRR. For multiple 
             codes, separate codes by '|' (pipe symbol). </br> 
-            **Enter search  text between parentheses. Search by text might 
+            **Enter search  text between quotation marks. Search by text might 
             take a while.</p>''', unsafe_allow_html = True)
 
 # Check if user entered a valid code, search text or filename
 if loadSearch != '':
     db = SRAweb()
-    if bool(re.fullmatch('".+"', loadSearch)):  # search text between parentheses
+    if bool(re.fullmatch('".+"', loadSearch)):  # search text between quotation marks
         df = db.search_sra(search_str = loadSearch)
     elif bool(re.fullmatch("^([S|E|D|G]R[P|S|X|R]\d+)(\|[S|E|D|G]R[P|S|X|R]\d+)*", loadSearch)): # valid code or codes seperated by '|'
         df = db.sra_metadata(loadSearch)
@@ -324,7 +324,7 @@ tab2.markdown('''<p>The <b>SRA Metadata Explorer</b> application is written
               <li> A study, experiment or sample code, or codes. For multiple 
               codes enter them separated by a pipe symbol '|', e.g., 
               SRP017942|SRP015946|SRP028720. </li>
-              <li> A search text enclosed within parentheses, e.g., "ribosome 
+              <li> A search text enclosed within quotation marks, e.g., "ribosome 
               profiling.</li>
               <li> A CSV file name, or path. Currently, the file has to be on 
               the same computer/server that the app is running on.</li>
